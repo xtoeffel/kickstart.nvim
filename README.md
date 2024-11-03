@@ -1,5 +1,26 @@
 # kickstart.nvim
 
+## Updated
+
+> :skull: This version of _kickstart.nvim_ was modified from the [original repo](https://github.com/nvim-lua/kickstart.nvim).
+
+### Installation
+
+- install `nvim`
+```
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
+sudo apt update
+sudo apt install make gcc ripgrep unzip git xclip neovim
+```
+- then `git clone https://github.com/xtoeffel/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim`
+
+### Changes
+
+Rough list of changes compared to original _kickstart.nvim_
+
+- require [markdownpreview](https://github.com/iamcco/markdown-preview.nvim)
+    - require entry for lazy.nvim modified from original because it didn't work
+
 ## Introduction
 
 A starting point for Neovim that is:

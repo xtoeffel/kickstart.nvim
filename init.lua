@@ -943,6 +943,25 @@ require('lazy').setup({
   -- Or use telescope!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
   -- you can continue same window with `<space>sr` which resumes last telescope search
+  {
+    -- Install markdown preview, use npx if available.
+    'iamcco/markdown-preview.nvim',
+    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+    ft = { 'markdown' },
+    build = function(plugin)
+      if vim.fn.executable 'npx' then
+        vim.cmd('!cd ' .. plugin.dir .. ' && cd app && npx --yes yarn install')
+      else
+        vim.cmd [[Lazy load markdown-preview.nvim]]
+        vim.fn['mkdp#util#install']()
+      end
+    end,
+    init = function()
+      if vim.fn.executable 'npx' then
+        vim.g.mkdp_filetypes = { 'markdown' }
+      end
+    end,
+  },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
