@@ -602,7 +602,7 @@ require('lazy').setup({
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --  See `:help lsp-config` for information about keys and how to configure
       local servers = {
-        --  NOTE: in the old init it was not required to turn the LSP's explicitly on; 
+        --  NOTE: in the old init it was not required to turn the LSP's explicitly on;
         --        however, now it is for some reason
         clangd = {},
         -- gopls = {},
@@ -881,7 +881,13 @@ require('lazy').setup({
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
-    config = function() require('nvim-tree').setup {} end,
+    config = function()
+      require('nvim-tree').setup {
+        git = {
+          ignore = false,
+        },
+      }
+    end,
   },
 
   {
@@ -890,6 +896,21 @@ require('lazy').setup({
     build = 'cd app && yarn install',
     init = function() vim.g.mkdp_filetypes = { 'markdown' } end,
     ft = { 'markdown' },
+  },
+  {
+    'NeogitOrg/neogit',
+    lazy = true,
+    dependencies = {
+      'nvim-lua/plenary.nvim', -- required
+      'sindrets/diffview.nvim', -- optional - Diff integration
+
+      -- Only one of these is needed.
+      'nvim-telescope/telescope.nvim', -- optional
+    },
+    cmd = 'Neogit',
+    keys = {
+      { '<leader>gg', '<cmd>Neogit<cr>', desc = 'Show Neogit UI' },
+    },
   },
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
