@@ -252,6 +252,11 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- Setting of specific command to functions
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+vim.g.mkdp_browser = 'epiphany'
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
