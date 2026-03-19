@@ -257,6 +257,12 @@ rtp:prepend(lazypath)
 -- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 vim.g.mkdp_browser = 'epiphany'
 
+vim.api.nvim_create_user_command('Tff', function() vim.api.nvim_command 'Telescope find_files' end, {})
+vim.api.nvim_create_user_command('Tlg', function() vim.api.nvim_command 'Telescope live_grep' end, {})
+vim.api.nvim_create_user_command('Tts', function() vim.api.nvim_command 'Telescope treesitter' end, {})
+vim.api.nvim_create_user_command('Tr', function() vim.api.nvim_command 'Telescope resume' end, {})
+vim.api.nvim_create_user_command('Td', function() vim.api.nvim_command 'Telescope diagnostics' end, {})
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
