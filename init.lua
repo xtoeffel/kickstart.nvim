@@ -84,6 +84,9 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+-- MARKDOWNPREVIEW settings
+vim.g.mkdp_theme = 'light'
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -830,7 +833,80 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'habamax'
+      -- others: 'quiet', 'lunaperche', 'default'
+      vim.cmd.colorscheme 'dimquiet'
+      -- set some themse stuff manually for improved looks
+      vim.cmd 'hi Normal guifg=#adadad guibg=#000000 guibg=NONE gui=NONE cterm=NONE'
+      -- vim.cmd 'hi Identifier guifg=#c9c9c9'
+      vim.cmd 'hi Comment guifg=#606060 guibg=NONE gui=NONE cterm=NONE'
+      vim.cmd 'hi Keyword guifg=#979797 guibg=NONE gui=NONE cterm=NONE'
+      -- vim.cmd 'hi @keyword.type gui=bold'
+      -- vim.cmd 'hi @keyword.conditional gui=bold'
+      -- vim.cmd 'hi @keyword.directive gui=bold'
+      -- vim.cmd 'hi String guifg=#ffdabf'            -- brighter
+      vim.cmd 'hi String guifg=#dec7b6 guibg=NONE gui=NONE cterm=NONE'
+      vim.cmd 'hi @string.escape guifg=#757575 guibg=NONE gui=NONE cterm=NONE'
+      vim.cmd 'hi Constant guifg=#b67d80 guibg=NONE gui=NONE cterm=NONE'
+      -- vim.cmd 'hi Constant gui=bold'
+      vim.cmd 'hi Statement guifg=#aeaeae guibg=NONE gui=NONE cterm=NONE'
+      -- vim.cmd 'hi Function guifg=#dddddd gui=bold'
+      -- vim.cmd 'hi Function guifg=#adadad gui=bold'
+      vim.cmd 'hi Function gui=NONE guifg=#55904b guibg=NONE gui=NONE cterm=NONE'
+      vim.cmd 'hi @type.builtin guifg=#979797 guibg=NONE gui=NONE cterm=NONE'
+      vim.cmd 'hi Type guifg=#979797 guibg=NONE gui=NONE cterm=NONE'
+      vim.cmd 'hi Include guifg=#788c8f guibg=NONE gui=NONE cterm=NONE'
+      -- MYQUIET: setting for quiet to be overwriten
+      -- to make the base color a bit darker
+      -- base color for 'quiet' is #dadada
+      -- vim.cmd 'hi CursorLineNr guifg=#aeaeae guibg=#5d5d5d gui=NONE cterm=NONE'
+      -- vim.cmd 'hi Directory guifg=#aeaeae guibg=NONE gui=NONE cterm=NONE'
+      --      -- vim.cmd 'hi ErrorMsg guifg=#aeaeae guibg=#000000 gui=reverse cterm=reverse'
+      --      -- vim.cmd 'hi ModeMsg guifg=#aeaeae guibg=NONE gui=bold cterm=bold'
+      --      -- vim.cmd 'hi MoreMsg guifg=#aeaeae guibg=NONE gui=NONE cterm=NONE'
+      vim.cmd 'hi Todo guifg=#82a7a8 guibg=NONE'
+      vim.cmd 'hi cTodo guifg=#82a7a8 guibg=NONE'
+      vim.cmd 'hi @comment.todo guifg=#82a7a8 guibg=NONE'
+      vim.cmd 'hi TodoFgFIX guifg=#bd8a8a guibg=NONE'
+      vim.cmd 'hi TodoBgFIX guifg=#bd8a8a guibg=NONE'
+      vim.cmd 'hi TodoFgSignFIX guifg=#bd8a8a guibg=NONE'
+      vim.cmd 'hi TodoBgSignFIX guifg=#bd8a8a guibg=NONE'
+      vim.cmd 'hi TodoFgTODO guifg=#82a7a8 guibg=NONE'
+      vim.cmd 'hi TodoBgTODO guifg=#82a7a8 guibg=NONE'
+      vim.cmd 'hi TodoFgSignTODO guifg=#82a7a8 guibg=NONE'
+      vim.cmd 'hi TodoBgSignTODO guifg=#82a7a8 guibg=NONE'
+      vim.cmd 'hi TodoFgNOTE guifg=#bd9f6b guibg=NONE'
+      vim.cmd 'hi TodoBgNOTE guifg=#bd9f6b guibg=NONE'
+      vim.cmd 'hi TodoFgSignNOTE guifg=#bd9f6b guibg=NONE'
+      vim.cmd 'hi TodoBgSignNOTE guifg=#bd9f6b guibg=NONE'
+      vim.cmd 'hi TodoFgWARN guifg=#c6ab7c guibg=NONE'
+      vim.cmd 'hi TodoBgWARN guifg=#c6ab7c guibg=NONE'
+      vim.cmd 'hi TodoFgSignWARN guifg=#c6ab7c guibg=NONE'
+      vim.cmd 'hi TodoBgSignWARN guifg=#c6ab7c guibg=NONE'
+      vim.cmd 'hi TodoFgTODO guifg=#82a7a8 guibg=NONE'
+      vim.cmd 'hi TodoBgTODO guifg=#82a7a8 guibg=NONE'
+      vim.cmd 'hi Pmenu guifg=#d5d5d5 guibg=#2c2c2c gui=NONE cterm=NONE'
+      vim.cmd 'hi PmenuMatch guifg=#d7005f guibg=#5d5d5d gui=NONE cterm=NONE'
+      vim.cmd 'hi PmenuExtra guifg=#000000 guibg=#5d5d5d gui=NONE cterm=NONE'
+      vim.cmd 'hi PmenuKind guifg=#000000 guibg=#5d5d5d gui=bold cterm=bold'
+      vim.cmd 'hi PmenuSbar guifg=#000000 guibg=#5d5d5d gui=NONE cterm=NONE'
+      vim.cmd 'hi PmenuSel guifg=#000000 guibg=#5d5d5d gui=NONE cterm=NONE'
+      vim.cmd 'hi PmenuMatchSel guifg=#d7005f guibg=#5d5d5d gui=bold cterm=bold'
+      vim.cmd 'hi PmenuExtraSel guifg=#000000 guibg=#5d5d5d gui=NONE cterm=NONE'
+      vim.cmd 'hi PmenuKindSel guifg=#000000 guibg=#5d5d5d gui=bold cterm=bold'
+      vim.cmd 'hi PmenuThumb guifg=#5d5d5d guibg=#FFFFFF gui=NONE cterm=NONE'
+      vim.cmd 'hi Question guifg=#aeaeae guibg=NONE gui=NONE cterm=NONE'
+      -- vim.cmd 'hi Constant guifg=#aeaeae guibg=NONE gui=NONE cterm=NONE'
+      -- vim.cmd 'hi Identifier guifg=#bfbfbf guibg=NONE gui=NONE cterm=NONE'
+      vim.cmd 'hi Identifier guifg=#aeaeae guibg=NONE gui=NONE cterm=NONE'
+      -- vim.cmd 'hi Ignore guifg=#aeaeae guibg=NONE gui=NONE cterm=NONE'
+      -- vim.cmd 'hi PreProc guifg=#aeaeae guibg=NONE gui=NONE cterm=NONE'
+      -- vim.cmd 'hi Special guifg=#aeaeae guibg=NONE gui=NONE cterm=NONE'
+      -- vim.cmd 'hi Statement guifg=#aeaeae guibg=NONE gui=NONE cterm=NONE'
+      -- vim.cmd 'hi StatusLineNC guifg=#000000 guibg=#5d5d5d gui=NONE cterm=NONE'
+      -- vim.cmd 'hi TabLine guifg=#000000 guibg=#5d5d5d gui=NONE cterm=NONE'
+
+      --      -- vim.cmd 'hi Underlined guifg=#aeaeae guibg=NONE gui=underline cterm=underline'
+      --      -- vim.cmd 'hi ToolbarButton guifg=#aeaeae guibg=#000000 gui=bold cterm=bold'
     end,
   },
 
@@ -874,9 +950,11 @@ require('lazy').setup({
   },
 
   { -- Highlight, edit, and navigate code
+    -- NOTE: removed 'html' from filetypes because treesitter highlighting
+    --       did not work for embedded JavaScript, but syntax highlighting works
     'nvim-treesitter/nvim-treesitter',
     config = function()
-      local filetypes = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
+      local filetypes = { 'bash', 'c', 'diff', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
       require('nvim-treesitter').install(filetypes)
       vim.api.nvim_create_autocmd('FileType', {
         pattern = filetypes,
